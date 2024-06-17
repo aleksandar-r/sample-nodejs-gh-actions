@@ -41,11 +41,11 @@ jobs:
 
       - name: Security Scanning
         uses: snyk/actions/node@master
-        with:
-          args: test
+      - name: Snyk Test
+        run: snyk test
         env:
           SNYK_TOKEN: b47e79b5-122b-4cf3-8660-efae12ab247c
-        timeout-minutes: 5
+        timeout-minutes: 10
 # Do not have an access key for AWS
 #  deploy:
 #     runs-on: ubuntu-latest
