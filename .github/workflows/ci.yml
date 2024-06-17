@@ -45,6 +45,7 @@ jobs:
           args: test
         env:
           SNYK_TOKEN: ${{ secrets.SNYK_TOKEN }}
+        timeout-minutes: 5
 # Do not have an access key for AWS
 #  deploy:
 #     runs-on: ubuntu-latest
