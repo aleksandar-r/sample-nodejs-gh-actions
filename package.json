@@ -1,0 +1,24 @@
+{
+	"name": "sample-nodejs-gh-actions",
+	"version": "1.0.0",
+	"description": "Sample nodejs app, just for testing CI/CD with GitHub Actions",
+	"main": "index.js",
+	"scripts": {
+		"test": "mocha test.js"
+	},
+	"keywords": [],
+	"author": "",
+	"license": "ISC",
+	"dependencies": {
+		"express": "^4.19.2"
+	},
+	"devDependencies": {
+		"@types/express": "^4.17.21",
+		"@types/mocha": "^10.0.6",
+		"@types/node": "^20.14.2",
+		"@types/supertest": "^6.0.2",
+		"mocha": "^10.4.0",
+		"supertest": "^7.0.0",
+		"typescript": "^5.4.5"
+	}
+}
