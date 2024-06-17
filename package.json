@@ -4,7 +4,9 @@
 	"description": "Sample nodejs app, just for testing CI/CD with GitHub Actions",
 	"main": "index.js",
 	"scripts": {
-		"test": "mocha test.js"
+		"build": "tsc",
+		"start": "node dist/index.js",
+		"test": "mocha -r ts-node/register src/test.ts"
 	},
 	"keywords": [],
 	"author": "",
