@@ -30,6 +30,15 @@ jobs:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}
 
+      - name: Cache dependencies
+        uses: actions/cache@v2
+        with:
+          path: ~/.cache/snyk
+          key:
+            ${{ runner.os }}-snyk-${{ hashFiles('**/snyk-test-report.json') }}
+          restore-keys: |
+            ${{ runner.os }}-snyk-
+
       - name: Security Scanning
         uses: snyk/actions/node@master
         with:
