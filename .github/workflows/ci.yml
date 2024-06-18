@@ -39,12 +39,12 @@ jobs:
           restore-keys: |
             ${{ runner.os }}-snyk-
 
-      - name: Security Scanning
+      - name: Security Scanning with Snyk
         uses: snyk/actions/node@master
-      - name: Snyk Test
-        run: snyk test
+        with:
+          args: test
         env:
-          SNYK_TOKEN: b47e79b5-122b-4cf3-8660-efae12ab247c
+          SNYK_TOKEN: ${{ secrets.SNYK_TOKEN }}
         timeout-minutes: 10
 # Do not have an access key for AWS
 #  deploy:
